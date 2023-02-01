@@ -1,0 +1,11 @@
+<h3> Welcome to parent component </h3> 
+
+
+    <input type="text" [(ngModel)] = "parentString" placeholder="type parent word here"  >
+
+ <h4> Parent word :- {{parentString}} </h4>
+ 
+ 
+<child-selector [childString] = "parentString"></child-selector>
+
+

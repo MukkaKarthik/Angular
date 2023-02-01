@@ -1,0 +1,63 @@
+.boxClass
+{
+
+    background-color : green;
+    color : white;
+    border: 2px solid black;
+    padding : 5px;
+}
+
+
+/* table // this code is working 
+{
+    background-color : red;
+    color : white;
+    border: 2px solid black;
+    padding : 5px;
+} */
+
+
+
+.GreenClass
+{
+    background-color: green;
+    color: white;
+
+}
+
+
+.RedClass
+{
+    background-color: red;
+    color: white;
+
+}
+
+
+.OrangeClass
+{
+    background-color: orange;
+    color: white;
+
+}
+
+
+
+
+
+.boldClass
+{
+    font-style: bold;
+}
+
+.ItalicClass
+{
+    font-style: italic;
+}
+
+
+.tr
+{
+    border : 2px solid black;
+    padding : 5px;
+}

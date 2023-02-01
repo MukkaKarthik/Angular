@@ -1,0 +1,125 @@
+<h2> Form Builder Service </h2>
+
+<form [formGroup] = "formGroup_Variable">
+
+
+    
+    <div >
+    
+        <label>User Name</label>
+        <textarea type="text" placeholder="Type user name here" formControlName="userName" 
+        [class.is-valid] = "formGroup_Variable.get('userName').invalid && formGroup_Variable.get('userName').touched" ></textarea>
+    
+       <div *ngIf="formGroup_Variable.get('userName').touched">
+            <small *ngIf="formGroup_Variable.get('userName').errors?.required"> User name form control is touched</small>
+
+            {{  *ngIf="formGroup_Variable.get('userName').errors?.ifUserNameClicked()}} this occurs conditionally 
+            
+                <br>
+
+
+            <!-- Code can be minimized by using short form -->
+
+            <small *ngIf="UserName_shortForm.errors?.required"> 
+                <strong> Short Form :- User name form control is touched </strong> 
+            </small>
+           
+
+       </div>
+    
+    </div>
+    
+    <br>
+    <br>
+    
+    <div >
+    
+        <label>Password </label>
+        <textarea  placeholder="Type Password here" formControlName="password"></textarea>
+    
+        
+    </div>
+    
+    <br>
+    <br>
+    
+    <div >
+    
+        <label>Confirm Password</label>
+        <textarea type="text" placeholder="Type Confirm Password here" formControlName="conformPassword"
+         [class.is-invalid] = "formGroup_Variable.errors?.Property_Mismatch_after_Validation" ></textarea>
+
+         <small *ngIf="formGroup_Variable.errors?.Property_Mismatch_after_Validation"> Error Occurred due to password mismatch </small>
+    
+    </div>
+    
+    <br>
+    <br>
+    
+    
+    
+    <div formGroupName="address">
+    
+    
+        <!-- Adding all address details -->
+    
+    <!-- State -->
+    
+    <div>
+    
+        <label>State</label>
+    
+        <textarea type="text" placeholder="type state here" formControlName="State"></textarea>
+    
+    </div>
+    <br>
+    
+    
+    
+    <!-- City -->
+    
+    <div>
+    
+        <label>City</label>
+    
+        <textarea type="text" placeholder="type City here" formControlName="City"></textarea>
+    
+    
+    </div>
+    <br>
+    
+    
+    <!-- Area , PinCode -->
+    
+    <div>
+    
+        <label>Area & PinCode</label>
+    
+        <textarea type="text" placeholder="type Area and PinCode here" formControlName="Area_PinCode"></textarea>
+    
+    
+    </div>
+    <br>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    <div>
+    
+        <button type="submit"> click here to submit form  </button>
+    
+    </div>
+    
+    <br>
+    <br>
+    
+    <h4> {{formGroup_Variable.value | json}} </h4>
+    
+    
+    
+    </form>

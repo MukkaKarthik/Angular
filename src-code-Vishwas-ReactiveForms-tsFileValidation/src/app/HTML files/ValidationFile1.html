@@ -1,0 +1,110 @@
+<h2>  Welcome to hello world component </h2>
+
+<h3> Registration form starts here </h3>
+
+
+<form [formGroup] = "formGroup_Variable">
+
+
+
+<div >
+
+    <label>User Name</label>
+    <textarea type="text" placeholder="Type user name here" formControlName="userName" ></textarea>
+
+
+
+</div>
+
+<br>
+<br>
+
+<div >
+
+    <label>Password </label>
+    <textarea  placeholder="Type Password here" formControlName="password"></textarea>
+
+
+</div>
+
+<br>
+<br>
+
+<div >
+
+    <label>Confirm Password</label>
+    <textarea type="text" placeholder="Type Confirm Password here" formControlName="conformPassword"></textarea>
+
+</div>
+
+<br>
+<br>
+
+
+
+<div formGroupName="address">
+
+
+    <!-- Adding all address details -->
+
+<!-- State -->
+
+<div>
+
+    <label>State</label>
+
+    <textarea type="text" placeholder="type state here" formControlName="State"></textarea>
+
+</div>
+<br>
+
+
+
+<!-- City -->
+
+<div>
+
+    <label>City</label>
+
+    <textarea type="text" placeholder="type City here" formControlName="City"></textarea>
+
+
+</div>
+<br>
+
+
+<!-- Area , PinCode -->
+
+<div>
+
+    <label>Area & PinCode</label>
+
+    <textarea type="text" placeholder="type Area and PinCode here" formControlName="Area_PinCode"></textarea>
+
+
+</div>
+<br>
+
+
+</div>
+
+
+
+
+
+
+
+<br>
+<br>
+
+<h4> {{formGroup_Variable.value | json}} </h4>
+
+<!-- Set value function to update form control values  -->
+<button type="button" (click)="loadAPIData_onButtonClick()">Set value function</button>
+
+
+<!-- Patch  value function to update few control  values  -->
+<button type="button" (click)="loadFewControlValues()">Patch Value function</button>
+
+
+</form>

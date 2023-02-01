@@ -1,0 +1,78 @@
+<h2> Welcome to tutorial component </h2>
+
+<button (click)="PrintConsoleMessages()"> Print Console Messages (click)</button>
+
+<button (click)="PrintSecondConsoleMessage()"> Print second Console Message (click)</button>
+
+
+
+
+<!-- Canonical form event binding -->
+
+<button on-click="PrintConsoleMessages()"> Print Console Messages on-click</button>
+
+
+{{ternaryOperator? "Ternary Operator is true" : "Ternary Operator is false"}}
+
+<br>
+<br>
+
+
+<!-- Two way data binding  -->
+
+<input type="text" placeholder="two way data binding"  (ngModel) = "twoWayBinding" />
+
+<h3> {{twoWayBinding}} </h3>
+
+
+
+<!-- Working on ngFor directives -->
+<input type="radio" title = "all radio option">
+<label> All({{allCount}}) </label>
+
+
+<input type="radio" title = "male radio option">
+<label> Male({{MaleCount}}) </label>
+
+
+<input type="radio" title = "female radio option">
+<label> Female({{FemaleCount}}) </label>
+
+
+<div   >
+
+    <table>
+
+            <tr>
+                <td class = "tr" >First Name </td>
+                <td class = "tr">Last Name </td>
+                <td class = "tr">Gender </td>
+                <td class = "tr">Location</td>
+                <td class = "tr"> first Interaction </td>
+                <td class = "tr"> last Interaction </td>
+
+             </tr>
+
+
+        <tr *ngFor = "let a of JSONObjectArray ; first as 'firstInIteration' ; last as 'lastInIteration'">
+
+            <td class = "tr"> {{a.firstName | uppercase}} </td>
+            <td class = "tr"> {{a.lastName | CustomDefinedPipe : a.Gender}} </td>
+            <td class = "tr">  {{a.Gender}}  </td>
+            <td class = "tr"> {{a.Location}} </td>
+            <td class = "tr"> {{firstInIteration}} </td>
+            <td class = "tr"> {{lastInIteration}} </td>
+
+
+        </tr>
+
+        <!-- firstName : {{a.firstName | uppercase}} , lastName : {{a.lastName | CustomDefinedPipe : a.Gender}} , Location : {{a.Location}} ,
+        firstInIteration : {{firstInIteration}} , lastInIteration : {{lastInIteration}} -->
+        <!-- <li>
+            Gender : {{a.Gender}}
+        </li> -->
+
+    </table>
+
+
+</div>

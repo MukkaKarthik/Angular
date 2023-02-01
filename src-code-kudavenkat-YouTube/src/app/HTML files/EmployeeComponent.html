@@ -1,0 +1,130 @@
+<h2> Welcome to employee details </h2>
+
+<table>
+
+    <tr class="boxClass">
+        <th> Personal particulars </th>
+        <th> Key Values </th>
+    </tr>
+
+    <tr>
+
+        <td> firstName  </td>
+        <td> {{firstName}} </td>
+
+    </tr>
+
+    <tr>
+
+        <td> lastName  </td>
+        <td> {{lastName}} </td>
+
+    </tr>
+
+    <tr>
+
+        <td> Gender  </td>
+        <td> {{Gender}} </td>
+
+    </tr>
+
+
+    <!-- <tr style="font-style: italic;"> -->
+    <tr>
+        <td> Age  </td>
+        <td> {{Age}} </td>
+
+    </tr>
+
+
+
+</table>
+
+
+
+<!-- Working on string interpolation -->
+
+
+<h2> Short description about working company   :- {{ "Words inside braces" + CompanyName}} </h2>
+
+Boolean value present  = {{ BooleanProperty ? "Yes, it is " : "No ,it is not"  }}
+
+
+<!-- <img src="{{ImageAddress}}" title="Google Image "> -->
+
+
+<!-- Printing same image using property binding -->
+
+<!-- <img [src] = "ImageAddress" title="Facebook Image"> -->
+
+<br>
+
+
+<br>
+
+Full Name = <h3> {{getFullName()}}  </h3>
+
+
+<button [disabled]="buttonDisabled"> Button should be disabled </button>
+
+<!-- But the above same if we use interpolation , then regardless of  buttonDisabled value , button is always disabled -->
+
+
+<button disabled={{buttonDisabled}}> Button should be disabled </button>
+
+
+<!-- property binding using canonical form , use bind-<property name>-->
+
+<h3 bind-innerHTML = "canonicalValue"></h3>
+
+
+<input type="text" placeholder="Input Value" value = "Management" id="InputID_Management">
+
+<br>
+
+<!-- Working on class binding -->
+
+<button class="RedClass"> Red class </button>
+<br>
+
+<button class="GreenClass"> Green class </button>
+<br>
+
+<button class="OrangeClass"> Orange class </button>
+<br>
+
+
+<!-- Class binding using property names -->
+
+<!-- Use the following way to replace existing classes with a different class -->
+
+<button [class]="classBinding_redClass"> Red class property binding </button>
+
+<br>
+<br>
+
+
+<!-- using conditional validation -->
+
+<button [class.OrangeClass]="ConditionalValidation_classBinding"> Conditional Validation Red class property binding </button>
+<br>
+<br>
+
+
+<button [class.RedClass]="!Exclamation_ConditionalValidation_classBinding"> Exclamation mark Conditional Validation Red class property binding </button>
+<br>
+<br>
+
+
+<div [ngClass]="applyClasses()">
+
+        Applying ngClass styles
+
+</div>
+
+
+
+<div [class]="classBinding_redClass_ItalicsClass">
+    Multiple properties using different styles
+</div>
+

@@ -1,0 +1,198 @@
+<h2> Welcome to form1 component </h2>
+
+
+
+<form #userForm = "ngForm" novalidate>
+     <!--NoValidate attribute will prevent the browser in kicking an event when submit button is clicked-->
+
+    {{userForm.value | json}}
+
+
+
+            <h3> Fixed variables section - Hard Coded Values in ts file </h3>
+    <div>
+
+        <input type="text"  #testingClassName placeholder="type school value here" [(ngModel)] = "SchoolName" [ngModelOptions]="{standalone: true}" >
+
+        <h3> {{SchoolName}} </h3>
+
+        {{testingClassName.className}}
+
+
+
+
+        <!-- First Name details  -->
+
+
+
+        <h3> First Name = {{firstName}} </h3>
+
+        <input type="text" required
+        placeholder="type first name value here" [(ngModel)] = "firstName" [ngModelOptions]="{standalone: true}">
+
+
+
+         <!-- last Name details  -->
+
+
+         <h3>Last Name =  {{lastName}} </h3>
+         <input type="text" required placeholder="type last name  value here" [(ngModel)] = "lastName" [ngModelOptions]="{standalone: true}">
+
+
+
+         <!-- Location  details  -->
+
+
+
+         <h3>Location = {{location}} </h3>
+         <input type="text" placeholder="type location value here" [(ngModel)] = "location" [ngModelOptions]="{standalone: true}">
+
+
+         <!-- Does age details  -->
+
+
+         <h3> Age = {{age}} </h3>
+         <input type="text" placeholder="type age value here" [(ngModel)] = "age" [ngModelOptions]="{standalone: true}">
+
+
+
+          <!-- Does company presence details  -->
+
+
+          <h3> Company presence = {{DoesCompanyExist}} </h3>
+          <input type="text" placeholder="type company presence value here" [(ngModel)] = "DoesCompanyExist" [ngModelOptions]="{standalone: true}">
+
+
+    </div>
+
+
+
+
+
+
+    <br>
+
+    <h3> Printing different topics mentioned in the property </h3>
+
+    <div *ngFor="let a of differentTopics">
+
+        <ul>
+            <li> {{a}}  </li>
+        </ul>
+
+
+    </div>
+
+    <br>
+
+    <div>
+
+        <label> Time preference (Morning slot) </label>
+        <input type="radio" placeholder="give morning timings">
+    </div>
+
+
+    <br>
+
+    <div>
+
+        <label> Time preference (Evening slot) </label>
+        <input type="radio" placeholder="give evening timings">
+    </div>
+
+    <br>
+
+    <div>
+
+        <input type="checkbox" name="Promotion" value = "offer_value" title="Promotional offers title">
+        <label>Send me promotional offers</label>
+
+
+
+    </div>
+
+
+    <br>
+
+    <div>
+
+        <select title="Subjects" #SubjectsValue>
+                <option value="biology_value"> Biology </option>
+                <option value="Maths_value"> Maths </option>
+                <option value="English_value"> English </option>
+                <option value="Science_value"> Science </option>
+                <option value="Hindi_value"> Hindi </option>
+
+
+        </select>
+
+    </div>
+
+    <div>
+
+        <label>Submit here</label>
+        <input type="submit">
+
+    </div>
+
+
+
+
+    <div>
+
+        <h3> One way binding , printing name_value variable value in h3 tag </h3>
+
+        <h3 > {{name_value}} </h3>
+
+
+
+        <h3> Printing variables through exported class from Model.ts file </h3>
+
+        <label>Name Details </label>
+
+        <input type="text" placeholder="type name" [value]="userModel_variable.name">
+
+        <br>
+
+        <label>Contact Details  </label>
+
+        <input type="text" placeholder="type contact number" [value]="userModel_variable.contact">
+
+        <br>
+
+        <label>Email Details </label>
+
+        <input type="text" placeholder="type email Address" [value]="userModel_variable.email">
+
+        <br>
+
+
+
+
+    </div>
+
+    <br>
+
+
+
+    <!-- Form level validations -->
+
+    <h3> Reference Value user form valid :- {{userForm.form.valid}}  </h3>
+
+
+    <button type="submit" [disabled]="userForm.form.valid" > Greyed out - User form true value </button>
+
+    <button type="submit" [disabled]="userForm.form.invalid || DoesCompanyExist" > Greyed out - DoesCompanyExist value = true </button>
+
+
+
+    <form  (ngSubmit) = "onSubmitting()">
+
+        <button type="submit"> Submitting form data</button>
+
+          </form>
+
+
+
+</form>
+

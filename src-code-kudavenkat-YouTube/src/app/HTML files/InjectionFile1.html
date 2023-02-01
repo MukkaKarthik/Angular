@@ -1,0 +1,40 @@
+<h3>  Welcome to Injection Component </h3>
+
+ColorPresent in component from variable = <h4> {{colorRequired.CurrentColor}} </h4> 
+
+ColorPresent in component from method =  <h4> {{receiveColor_fromOriginalClass}} </h4> 
+
+
+<button type="button" [style.background-color]="colorRequired.CurrentColor" >get color method from Service class</button>
+
+
+
+
+<!-- Local Instance properties and methods created when constructor is called -->
+
+<h3> Local Instance "colorLocalInstance" properties and methods </h3>
+
+ColorPresent in local instance colorLocalInstance property = <h4> {{colorLocalInstance.CurrentColor}} </h4> 
+
+ColorPresent in  local instance colorLocalInstance property from method =  <h4> {{receiveColor_fromOriginalClass}} </h4> 
+
+
+<button type="button" [style.background-color]="colorLocalInstance.CurrentColor" >Get color method from local instance</button>
+
+
+<!-- Don't follow above convention code as it is difficult for maintenance  -->
+
+
+
+
+<!-- Class Instance created and stored in a variable-->
+
+<h3> Class Instance properties and methods "tryingInstance" assigned to a variable </h3>
+
+ColorPresent in local instance tryingInstance property = <h4> {{tryingInstance.CurrentColor}} </h4> 
+
+ColorPresent in  local instance tryingInstance property from method =  <h4> {{receiveColor_fromOriginalClass}} </h4> 
+
+
+<button type="button" [style.background-color]="colorLocalInstance.CurrentColor" >Get color method from local instance</button>
+
