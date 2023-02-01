@@ -1,0 +1,59 @@
+<h3> Welcome to pipes component </h3>
+
+{{fullName | uppercase}}
+
+<br>
+<br>
+
+{{todayDATE}}
+
+<br>
+<br>
+
+{{todayDATE | date}}
+
+<br>
+<br>
+
+{{todayDATE | date : "yyyy-MM-dd" }}
+
+
+<br>
+<br>
+
+
+{{todayDATE | date : "mm-yyyy-dd" }}
+
+
+<br>
+<br>
+
+
+{{todayDATE | date : "fullDate" }}
+
+
+<br>
+<br>
+
+
+
+
+<!-- Chaining multiple pipes -->
+
+<!-- for Chaining , it usually works from left to right , hence order is important-->
+
+{{ArrayDetails | json  | uppercase  }}
+<br>
+<br>
+
+
+<!-- Adding custom pipes on HTML template -->
+
+{{ fullName | CustomPipeDecorator : 10 }}
+
+<br>
+<br>
+
+
+{{changeValue | async}} 
+<!-- Above is an asynchronous task which can happen at any time once after time matches and server responds  -->

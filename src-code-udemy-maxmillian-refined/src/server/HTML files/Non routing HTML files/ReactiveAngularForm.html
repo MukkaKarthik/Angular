@@ -1,0 +1,148 @@
+<h3>Welcome to reactive form </h3>
+
+<form [formGroup] = "CompleteForm">
+    <!-- Above line we are using property binding -->
+
+    <label>fullName : </label>
+    <input type="text" placeholder="fullName" formControlName = "fullName" >
+
+    <span *ngIf="CompleteForm.get('fullName')!.invalid">Please enter a valid user name</span>
+    <br>
+    <br>
+
+    <!-- Invalid means nothing is there , valid means something is present inside that field -->
+
+    <!-- Above line we are searching a key property in a JSON object , it is looking out for a string  -->
+
+    <label>Email Address : </label>
+    <textarea type="text" placeholder="emailAddress" formControlName = "EmailAddress"></textarea>
+    <span *ngIf="CompleteForm.get('EmailAddress')!.touched">Email address is touched</span>
+    <!--  ! is used because to give confidence to typescript that this object won't be null , or else it will throw an error
+    stating that object is possibly null -->
+    <br>
+    <br>
+
+
+
+    <label>Gender : </label>
+    <textarea type="text" placeholder = "gender" formControlName = "Gender_formControl"></textarea>
+    <br>
+    <br>
+
+
+    <!-- It is always good to go with path approach because there might be some nested form controls inside form groups -->
+
+    <div>
+
+        <form formGroupName = "SchoolDetails">
+
+            <label> userName_school : </label>
+            <input type="text" placeholder="school name" formControlName = "userName_school" >
+            <span *ngIf="CompleteForm.get('SchoolDetails.userName_school')!.touched">Please enter a valid school name</span>
+
+        </form>
+
+    </div>
+
+
+    <button type="button" (click) = "SubmitDetails()">Submit form</button>
+
+    <br>
+    <br>
+
+
+    {{ReturnString}}
+
+    <br>
+    <br>
+
+    {{ReturnString()}}
+
+    <br>
+    <br>
+
+
+    {{ReturnArray}}
+
+    <br>
+    <br>
+
+    {{ReturnArray()}}
+
+    <br>
+    <br>
+
+
+    {{ReturnObject}}
+
+    <br>
+    <br>
+
+
+    {{ReturnObject() | json}}
+
+    <br>
+    <br>
+
+    {{ReceiveString_returnObject}}
+
+    <br>
+    <br>
+
+    {{ReceiveString_returnObject("Printing hello world Programmer",24) | json}}
+    <br>
+    <br>
+
+
+   {{Console_SetDetails()}}
+
+
+
+
+
+
+
+
+
+   <form [formGroup] = "Project_Assignment">
+
+    <!-- Working on assignment -->
+
+    <label>Project Name : </label>
+    <input type="text" placeholder="projectName" formControlName = "ProjectName" >
+    <br>
+    <br>
+
+
+    <label>Project Mail Address : </label>
+    <input type="text" placeholder="projectName" formControlName = "EmailAddress" >
+    <span *ngIf="Project_Assignment.get('EmailAddress')!.valid" >Please enter a valid email address</span>
+    <br>
+    <br>
+
+
+    <label>Home Address : </label>
+    <input type="text" placeholder="homeAddress given here " formControlName = "HomeAddress" >
+    <br>
+<span *ngIf="Project_Assignment.get('HomeAddress')!.invalid &&  Project_Assignment.get('HomeAddress')!.touched" >InValid validation is running</span>
+
+<br>
+<span *ngIf="Project_Assignment.get('HomeAddress')!.touched" >Touch Validation is running</span>
+    <br>
+   
+
+    <label>Project Status : </label>
+    <select title="OptionsTitle">
+        
+        <option>Stable</option>
+        <option>Critical</option>
+        <option>Finished</option>
+        
+    </select>
+
+
+    
+   </form>
+  
+</form>
+

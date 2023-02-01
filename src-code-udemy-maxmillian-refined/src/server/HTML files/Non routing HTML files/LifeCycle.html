@@ -1,0 +1,40 @@
+<h2> Welcome to life cycle component , this component is being changed</h2>
+
+<button type="button" (click)="Change_propertyValue()" >change property value</button>
+
+<br>
+<br>
+
+
+<input type="text" placeholder="type text" value="hello programming">
+
+
+<!-- Printing array object at different indexes -->
+
+<div *ngFor="let a of JSONObject">
+
+    {{a | json}}
+
+</div>
+
+
+
+<!-- Adding elements into an array from HTML to typescript file using references -->
+
+<h4> {{ArrayElements | json}} </h4>
+
+<input type="text" value="first word" placeholder="first word placeholder" #firstReference>
+<button type="button" (click)="addElements_toArray(firstReference)" >add first word placeholder to array </button>
+<br>
+<br>
+
+<input type="text" value="second word" placeholder="second word placeholder" #SecondReference>
+<button type="button" (click)="addElements_toArray(SecondReference)" >add second word placeholder to array </button>
+<br>
+<br>
+
+<input type="text" value="third word" placeholder="third word placeholder" #ThirdReference>
+<button type="button" (click)="addElements_toArray(ThirdReference)" >add third word placeholder to array </button>
+<br>
+<br>
+

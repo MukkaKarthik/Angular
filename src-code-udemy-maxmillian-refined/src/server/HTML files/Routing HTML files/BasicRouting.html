@@ -1,0 +1,162 @@
+<h3> Welcome to basic routing file </h3>  
+
+
+<!-- Different links -->
+
+<router-outlet>
+
+    <a href="/SportsComponentURL">Sports Component</a>
+    <br>
+    
+    <a href="/cinemaComponentURL">Cinema Component</a>
+    <br>
+    
+    
+    <a href="/educationComponentURL">Education Component</a>
+    <br>
+    
+  </router-outlet>
+
+
+  <!-- Above approach is not suggested as browser loads every time due to which application state is lost -->
+
+
+
+  <!-- Hence follow below approach as it browser won't load every time when anchor link is clicked -->
+
+  <br>
+  <br>
+  <br>
+
+
+ 
+
+
+<div>
+    <button (click)="onButtonClick_LoadPath()"> Educational Institutions : Click here to navigate programmatically </button>
+</div>
+
+
+
+
+
+
+<h3>Using router links directives </h3>
+
+<!-- These are relative paths as it appends the links used anywhere -->
+  <router-outlet>
+
+
+         <a routerLink="/SportsComponentURL" routerLinkActive="activePath"
+           [routerLinkActiveOptions]="{exact : true}">Sports
+           Component</a>
+         <br>
+         <br>
+         <br>
+
+
+
+
+         <a routerLink="/cinemaComponentURL" routerLinkActive="activePath"
+           [routerLinkActiveOptions]="{exact : true}">Cinema
+           Component</a>
+         <br>
+         <br>
+         <br>
+
+
+
+         <a routerLink="/educationComponentURL" routerLinkActive="activePath"
+           [routerLinkActiveOptions]="{exact : true}">Education Component</a>
+         <br>
+         <br>
+         <br>
+
+
+
+         <!-- Using property binding -->
+
+         <h5> Using property binding </h5>
+
+
+
+
+         <a [routerLink]="['/educationComponentURL']" routerLinkActive="activePath"
+           [routerLinkActiveOptions]="{exact : true}">Education Component property binding </a>
+         <br>
+         <br>
+         <br>
+
+
+
+         <a routerLink="/" routerLinkActive="activePath" [routerLinkActiveOptions]="{exact : true}">Default sports
+           Component</a>
+         <br>
+         <br>
+         <br>
+
+
+
+         <a routerLink="/DynamicParameterURLInjection/:id_dynamic/:fullName_dynamic">Dynamic parameters injection in URL
+         </a>
+         <br>
+         <br>
+         <br>
+
+
+
+
+
+
+         <!-- above path is a default path  and by including property binding routerLinkActiveOptions default path won't be highlighted as a css property by default-->
+
+
+
+         <!-- Note : when / is used , it is called absolute path , when it is not used , then it is called relative path  -->
+
+
+
+
+         <!-- Navigating using property binding array -->
+
+
+         <a [routerLink]="['/DynamicParameterURLInjection','facebookArray','developerArray']">Array Property binding
+           Dynamic
+           parameters injection in URL </a>
+         <br>
+         <br>
+         <br>
+
+
+         <a routerLink="/child1Component">Child1 component </a>
+         <br>
+         <br>
+         <br>
+
+
+
+
+         <a routerLink="/child2Component">Child2 component </a>
+         <br>
+         <br>
+         <br>
+
+
+
+         <!-- Nesting child routes inside parent as parent has some partial URL  -->
+
+
+         <a [routerLink]="['/DynamicParameterURLInjection','facebookArray','developerArray']"> Nesting child routes
+           Array
+           Property binding Dynamic parameters injection in URL </a>
+         <br>
+         <br>
+         <br>
+
+     
+
+
+       
+
+
+  </router-outlet>

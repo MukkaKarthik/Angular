@@ -1,0 +1,58 @@
+<h3 class="h3Class"> Welcome to other components </h3>
+
+
+<button type="button">Root</button>
+<br>
+<br>
+<button type="button">Header</button>
+<br>
+<br>
+
+
+
+<button type="button">Model</button>
+<br>
+<br>
+<button type="button">Component</button>
+<br>
+<br>
+<button type="button">Feature</button>
+
+
+<h3> Printing Ingredient component details</h3>
+
+<div *ngFor="let ing_tempObject of ingredientArray">
+
+
+    <a href="#">
+        <h4> {{ing_tempObject.IngredientName}} </h4>
+        <h4> {{ing_tempObject.IngredientAmount}} </h4>
+    </a>
+
+
+
+</div>
+
+<div> {{ingredientArray  | json}} </div>
+
+<br>
+<br>
+<br>
+
+
+
+<div>
+
+    <label> Name</label>
+    <input type="text" placeholder="type catalog item here"/>
+
+    <label> Amount</label>
+    <input type="text" placeholder="type amount here"/>
+
+    <button type="button">Add </button>
+    <button type="submit">Clear</button>
+    <button type="submit">Submit details to add into database</button>
+
+
+</div>
+

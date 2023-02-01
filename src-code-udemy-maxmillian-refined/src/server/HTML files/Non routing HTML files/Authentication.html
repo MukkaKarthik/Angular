@@ -1,0 +1,50 @@
+<h3> Welcome to authentication component </h3>
+
+<form ngForm="formReference">
+
+    <label>Email address</label>
+    <input type="text" placeholder="Email" name="EmailValue" ngModel required #emailReference>
+    <br>
+    <br>
+
+
+    <label>Password</label>
+    <input type="text" placeholder="Password_placeholder" ngModel required name="PasswordValue" #passwordReference>
+    <br>
+    <br>
+   
+
+    <button type="submit" (click)="SwitchLogMode()">{{ isLoggedIn ? "Currently user is logged in" : "Currently user is logged out"}}</button>
+
+    <button type="button" (click)="PrintReferenceValue_PostDetailsToFireBase(emailReference,passwordReference)">Print form reference values</button>
+
+    <br>
+    <br>
+
+    <button type="button" (click)="SendCountryDetails()">Send Country Capitals</button>
+
+    {{RandomJSONObject.propertyRandom}}
+
+    <br>
+    <br>
+
+    <button type="button" (click)="SendJSONDetails_APIKey()" >Send JSON details to API authenticated URL</button>
+
+   
+   
+   
+    <br>
+    <br>
+
+    <button type="button" (click)="StoreDetails_localStorage()">Store details in local storage</button>
+
+    <br>
+    <br>
+
+    
+   
+
+   
+   
+
+</form>

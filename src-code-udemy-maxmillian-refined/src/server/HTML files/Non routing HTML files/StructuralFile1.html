@@ -1,0 +1,49 @@
+
+<h2> Welcome to structural component </h2>
+
+<h3> Printing Array Numbers  </h3> 
+
+<ul *ngFor = "let n of ArrayPrint">
+        <li> {{n}}  </li>
+
+</ul>
+
+
+
+<h3 directiveComponent-selector> Designing structural directives </h3>
+
+<h3 renderDirective-selector> Designing render directives </h3>
+
+<!-- Dynamically setting values from a directive file -->
+
+<!-- <h3 renderDirective-selector [defaultColor] = "'yellow'" [mouseOverColor] = " 'red'"> Changing colors by setting directives on HTML elements   </h3> -->
+
+<!-- Also works this way for property binding having custom variables -->
+
+<!-- <h3 renderDirective-selector defaultColor = "yellow" mouseOverColor = "red"> No brackets  </h3> -->
+
+
+
+
+
+<!-- Working on ngSwitch  -->
+
+<div [ngSwitch]="ngSwitchValue">
+
+    <p *ngSwitchCase="5"> Value is 5 </p>
+    
+    <p *ngSwitchCase="25"> Value is 25 </p>
+
+    <p *ngSwitchCase="35"> Value is 35 </p>
+
+    <p *ngSwitchCase="45"> Value is 45 </p>
+
+    <p *ngSwitchCase="100"> Value is 100 </p>
+
+    <p *ngSwitchDefault="200"> Value is 200 </p>
+
+</div>
+
+
+
+

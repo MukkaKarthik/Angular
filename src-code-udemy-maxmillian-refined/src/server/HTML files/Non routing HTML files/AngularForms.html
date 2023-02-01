@@ -1,0 +1,165 @@
+<h3> Welcome to angular forms </h3>
+
+
+
+<form #formElement>
+
+
+
+<label> Name </label>
+<input type="text" placeholder="type name here" #nameReference ngModel name="userName_formControl" required>
+
+<!-- By adding ngModel it informs angular that particular element is a form control ,
+    then it will be represented in JavaScript representation of the form -->
+
+<br>
+<br>
+
+<label>Mail Address</label>
+<input type="text" placeholder="type mail address" #mailReference ngModel name="MailAddress_formControl" >
+
+
+
+
+<br>
+<br>
+
+
+<label>Secret Questions</label>
+<select title="Branches" #Branches ngModel name="Branches_formControl">
+
+    <option> Mechanical</option>
+    <option> Electrical</option>
+    <option> Civil</option>
+    <option>Electronics</option>
+
+</select>
+
+<br>
+<br>
+
+
+<button type="button" (click)="submitButton(nameReference,mailReference,Branches,formElement,formObject)">Click to submit form</button>
+<br>
+<br>
+
+
+<form #formObject = "ngForm">
+
+    <label>form element 2  Name </label>
+<input type="text" placeholder="type form name here" #nameReference ngModel name="FormName_formControl">
+
+
+<br>
+<br>
+
+<!-- Above way we can get access to ngForm object created via JavaScript representation -->
+
+<button type="button" (click) = "ClickDecorator()">Form level decorator</button>
+</form>
+
+
+<br>
+<br>
+
+
+<label>Mail Address form Validation</label>
+<input type="text" placeholder="type mail address" required ngModel name="MailAddress_formControl"
+ #emailForm = "ngModel">
+<span *ngIf="emailForm.touched">Please enter a valid email address </span>
+
+<!-- Popping up email address from back end template driven  -->
+
+<h3> Template driven popping email address </h3>
+<!-- below path is one way binding  -->
+<input type="text" placeholder="template driven email" [ngModel] = "PoppingUp_email" [ngModelOptions]="{standalone: true}">
+{{PoppingUp_email}}
+
+
+<br>
+<br>
+
+
+
+<!-- Two way data binding -->
+
+<label> Email Address two way data binding </label>
+<input type="text" placeholder="message two way " [(ngModel)] = "twoWay_binding" [ngModelOptions]="{standalone: true}">
+
+{{twoWay_binding}}
+
+
+</form>
+
+
+
+
+
+
+
+<!-- Handling radio buttons -->
+
+<form #radioButton_reference = "ngForm">
+
+    <div *ngFor="let gender_temp of RadioButton_Gender">
+
+        <input type="radio" placeholder="RadioButton" value="Male" name="Male"> {{gender_temp}}
+
+    </div>
+
+
+    <button type="button" (click)="RadioButtonClicked(radioButton_reference)">Submit form radio</button>
+
+
+</form>
+
+
+<form #personalDetails>
+
+    <!-- Displaying different personal details -->
+
+    <h4>Feeding from front end to back end </h4>
+
+    <label>full Name</label>
+    <input type="text" name="fullName_ref" placeholder="full name here" value="Google Full Name">
+    <br>
+    <br>
+
+
+    <label>location</label>
+    <input type="text" name="location_ref" placeholder="location here" value="Google location">
+    <br>
+    <br>
+
+    <label>Age</label>
+    <input type="text" name="Age_ref" placeholder="Age here" value=25>
+    <br>
+    <br>
+
+
+    <button type="button" (click)="onSubmitPersonalDetails(personalDetails)">Submit personal details</button>
+
+    <br>
+    <br>
+
+
+    {{personDetails | json}}
+
+
+    <form >
+
+        <h3> feeding from back end to front end </h3>
+
+        fullName : {{BackEnd_object.fullName_backend}}
+
+        <br>
+        <br>
+
+
+        <input type="text" placeholder="back end name" [value]="BackEnd_object.fullName_backend">
+
+    </form>
+
+
+
+</form>

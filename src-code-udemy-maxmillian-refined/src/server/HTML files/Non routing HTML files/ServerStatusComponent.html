@@ -1,0 +1,63 @@
+<h3>This is coming from templateURL </h3>
+<h3> statusID value = {{statusID}} </h3> 
+        <h3> Variable statusValue = {{statusValue}} </h3>
+        <h3> {{getServerStatus()}} </h3>
+        <button [disabled]="!showColor" > Disabled attribute property</button> 
+        <button [innerText]="!showColor"> Inner Text attribute property </button>
+
+        <button (click)="ButtonClicked()"> onClick handler events </button>
+
+        <h3> {{ NoServer}} </h3>
+
+        <!-- We can write the code in click event handler itself if required , but not recommended  -->
+
+
+        <!-- above 2 lines come under property  -->
+
+        <h3> {{showColor}} </h3>
+
+
+
+        <!-- Working on event handlers -->
+
+        <form ((submit))="TypedSomething($event)">
+
+            <input type="text" placeholder="Type here something" />
+
+            <button type="submit">Click here to execute event handler $event  </button>
+
+            <h3>{{EventHandler_variable }}</h3>
+
+            <input type="text" placeholder="type something" [(ngModel)] = "NoServer" [ngModelOptions]="{standalone: true}"/>
+
+            <h3> {{NoServer}} </h3>
+
+
+            <label>Coach ngModel directives </label>
+
+            <input type="text" placeholder="type something" [(ngModel)] = "AppServerComponent" [ngModelOptions]="{standalone: true}"/>
+
+            <h3> {{AppServerComponent}} </h3>
+
+            <button type="button" [disabled]="AppServerComponent == ''" >Button will be disabled when nothing is present</button>
+
+            <button type="button" (click)="AppServerComponent = '' " class="buttonClass" >Reset Button</button>
+
+            <h3 *ngIf="ifDirective else NoClass" > Class started , executing if condition </h3>
+
+            <ng-template #NoClass >
+                <h4 class="primaryClass">Class did not start , execute else condition </h4>
+            </ng-template>
+
+            <h3 [ngStyle]= "{backgroundColor : getGreenBackgroundColor()}"> Green color component </h3>
+
+            <h3 [ngStyle]= "{backgroundColor : getRedBackgroundColor()}"> Red color component </h3>
+          
+            <!-- ng style component allows us to update dynamically , above statement is declared using external styling , 
+                internal styling is also possible -->
+
+           
+        </form>
+
+
+        

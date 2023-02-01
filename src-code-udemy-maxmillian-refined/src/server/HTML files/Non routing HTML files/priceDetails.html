@@ -1,0 +1,79 @@
+<h3> Welcome to price details component </h3>
+
+<button type="button">Recipe Book</button>
+<br>
+<br>
+<button type="button">Recipe List</button>
+<br>
+<br>
+<button type="button">Recipe Item</button>
+<br>
+<br>
+<button type="button">Recipe Detail</button>
+<br>
+<br>
+<button type="button">Recipe</button>
+
+
+
+<div>
+
+    <ul>
+
+        <li ><a href="#">Ration things - $1000</a></li>
+        <li ><a href="#">Stationary things - $3500</a></li>
+        <li ><a href="#">Toys - $4500</a></li>
+        <li ><a href="#">Shoes - $7500</a></li>
+        <li ><a href="#">Apparels - $8700</a></li>
+
+    </ul>
+
+
+</div>
+
+
+<div>
+
+    <h3> Microsoft Image title from RecipeModel </h3>
+
+    <p> Started in 1990's trying to get a job in Bangalore </p>
+
+    <img src = "https://media.istockphoto.com/photos/microsoft-headquarters-in-bucharest-romania-picture-id1184908397?k=20&m=1184908397&s=612x612&w=0&h=i7B2Luk-rFlXdxmzDWv8YZANRjGk8ruw3QjbwMi2ORg="
+    alt = "">
+
+</div>
+
+
+
+<div *ngFor="let local_recipeObject of recipes">
+
+    <!-- <h3 style="background-color: red; color: white;"> trying property binding this time </h3>
+    above line code is working -->
+
+    <h3> Working with looping arrays and string property binding for images </h3>
+
+    <h3> {{local_recipeObject.recipeName}} </h3>
+
+    <p> {{local_recipeObject.recipeDescription}} </p>
+
+    <!-- Using string interpolation -->
+    <!-- <img src = "{{local_recipeObject.ImagePath}}" alt=""> -->
+
+    <!-- String interpolation or property binding both work -->
+
+    <!-- Using property binding -->
+    <img [src]=local_recipeObject.ImagePath alt="">
+
+</div>
+
+
+<div>
+
+    <button type="button">Edit Price details</button>
+    <button type="button">Discount offers</button>
+    <button type="button">Redeem Coupons</button>
+
+</div>
+
+
+

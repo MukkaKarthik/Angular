@@ -1,0 +1,20 @@
+<h3> Welcome to custom defined routing module, returning to this module </h3>
+
+<!-- These below lines of code are not working -->
+<router-outlet>
+
+    <a routerLink="/BasicCLIComponentRoute">CLI component</a>
+
+    <br>
+    <br>
+
+    <a routerLink="/LifeCycleRoute">Life cycle route component </a>
+
+
+    <!-- href = "" will send a request to the browser and hence browser refreshes the page which might 
+        cause performance issues for larger components , hence use routerLink which won't reload the browser -->
+
+  </router-outlet>
+
+
+

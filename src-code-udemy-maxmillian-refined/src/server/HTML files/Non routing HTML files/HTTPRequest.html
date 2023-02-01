@@ -1,0 +1,56 @@
+<h3> Welcome to HTTP requests component </h3>
+
+<form #formReference>
+
+    <label>Title Property</label>
+   
+    <input type="text" placeholder="type title here" #TitleReference>
+
+    <br>
+    <br>
+
+    <label>Content Property</label>
+ 
+    <input type="text" placeholder="type content here" #ContentReference>
+   
+    <br>
+    <br>
+
+    <button type="submit" (click)="SendPost_buttonClicked(TitleReference,ContentReference)">Send Post</button>
+    <br>
+    <br>
+
+    <hr>
+
+    <button type="submit" (click)="GetPosts_fromFirebase()">fetch posts</button>
+    <button type="submit">Clear Post</button>
+
+
+    <!-- Printing all details received from get request -->
+
+    <br>
+    <br>
+    
+
+  
+
+        {{GetDataProperty_fromFunction | json}}
+
+
+
+
+        <br>
+        <br>
+
+
+    <h3 *ngIf = "ErrorMessage"> {{ErrorMessage}} </h3>
+
+    <h3 *ngIf = "!ErrorMessage"> No error at present </h3>
+
+  
+   
+
+    
+
+
+</form>
